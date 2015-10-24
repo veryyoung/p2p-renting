@@ -27,7 +27,6 @@ public class LandlordInfo extends Info {
 
     private String traffic;
 
-    private String around;
 
 
 }

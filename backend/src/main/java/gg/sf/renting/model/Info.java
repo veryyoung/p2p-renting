@@ -34,6 +34,7 @@ public class Info {
 
     private String userId;
 
+    private Double area;
 
 
 }
