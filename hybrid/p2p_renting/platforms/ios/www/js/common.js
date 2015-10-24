@@ -30,9 +30,9 @@
     }
 
     lib.RequireLogin = function(){
-        if(!window.Renting_AccessToken){
-            window.Renting_AccessToken = jxhl.utility.getLocalStorage('Renting_AccessToken');
-        }
+        // if(!window.Renting_AccessToken){
+        //     window.Renting_AccessToken = jxhl.utility.getLocalStorage('Renting_AccessToken');
+        // }
         if (!window.Renting_AccessToken) {
             jxhl.utility.loadJxhlLayout('signin');
             return false;
@@ -42,7 +42,7 @@
     
     lib.DoLogin = function(token){
         window.Renting_AccessToken = token;
-        jxhl.utility.setLocalStorage('Renting_AccessToken', token);
+        //jxhl.utility.setLocalStorage('Renting_AccessToken', token);
     }
 
     lib.GetUserSession = function () {

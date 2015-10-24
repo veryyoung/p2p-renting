@@ -1,5 +1,5 @@
 /**
- * Created by xjf on 15/6/16.
+ * Created by xjf
  */
 
 define(['module', 'common'],function(module, common){
@@ -15,11 +15,17 @@ define(['module', 'common'],function(module, common){
         this.jxhlContainer = container;
         this.jxhlArguments = args;
         this.jxhlLocalVars = vars;
+       
+       this.bindEvent.apply(this, []);
+    }
+    
+    Func.prototype.bindEvent = function(){
+        var self = this;
         
-        //$(container).find('div[local-id=div-main]').html('haha! fun!');
-        
-        //注入需要登录
-        common.RequireLogin();
+        this.jxhlLocalVars[0].onclick = function(){
+            jxhl.utility.loadJxhlLayout('landlord/publish');
+        }
+       
     }
 
     module.exports = new Func();
