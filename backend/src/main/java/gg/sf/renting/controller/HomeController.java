@@ -2,6 +2,7 @@ package gg.sf.renting.controller;
 
 import gg.sf.renting.entity.User;
 import gg.sf.renting.rest.RestData;
+import gg.sf.renting.service.TokenService;
 import gg.sf.renting.service.UserService;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -13,6 +14,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by veryyoung on 2015/3/2.
  */
@@ -22,6 +26,9 @@ public class HomeController extends BaseController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private TokenService tokenService;
 
     @RequestMapping("/register")
     public RestData register(User user) {
@@ -56,6 +63,11 @@ public class HomeController extends BaseController {
         } else {
             restData.setComment("登陆成功");
             restData.setSuccess(1);
+            Map<String, String> data = new HashMap<>();
+            data.put("token", tokenService.storeToken(user.getId()));
+            data.put("useId", user.getId());
+            data.put("useName", user.getUserName());
+            restData.setData(data);
         }
         return restData;
     }
