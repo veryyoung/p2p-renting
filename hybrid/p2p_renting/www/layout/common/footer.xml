@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jxhl xmlns="http://halo-studio.com/jxhl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://halo-studio.com/jxhl ../../js/jxhl.xsd">
+    <panel dock="fill" css_text="background:red;">
+       
+    </panel>
+    <runnable>
+        <![CDATA[
+            require(['pages/footer'], function(a){
+                a.init(jxhl$container, jxhl$arguments, jxhl$localVars);
+            });
+        ]]>
+    </runnable>
+</jxhl>
