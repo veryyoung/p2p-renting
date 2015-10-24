@@ -19,21 +19,6 @@ public class WebUtils {
 
     private static final Pattern pattern = Pattern.compile(IPADDRESS_PATTERN);
 
-    /**
-     * 检验输入的captcha是否与Session中的一致
-     *
-     * @param request
-     * @param captcha
-     * @return true代表一致
-     */
-    public static boolean checkCaptcha(HttpServletRequest request, String captcha) {
-        String captchaExpected=(String)request.getSession().getAttribute(com.google.code.kaptcha.Constants.KAPTCHA_SESSION_KEY);
-        if (captchaExpected.toUpperCase().equals(captcha.toUpperCase())) {
-            request.getSession().removeAttribute(com.google.code.kaptcha.Constants.KAPTCHA_SESSION_KEY);
-            return true;
-        }
-        return false;
-    }
 
     /**
      * 获取IP地址
