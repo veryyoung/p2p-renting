@@ -29,9 +29,11 @@ public class User {
 
     private Date createTime;
 
-    //是否为管理员
-    @Column(columnDefinition = "boolean default false", nullable = false)
-    private boolean admin;
+    @Column(length = 20)
+    private String mobile;
 
+    private int age;
+
+    private boolean male;
 
 }
