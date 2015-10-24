@@ -1,5 +1,6 @@
 package gg.sf.renting.entity;
 
+import gg.sf.renting.enums.UserType;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -35,5 +36,8 @@ public class User {
     private int age;
 
     private boolean male;
+
+    private UserType userType;
+
 
 }

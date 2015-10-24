@@ -63,10 +63,11 @@ public class HomeController extends BaseController {
         } else {
             restData.setComment("登陆成功");
             restData.setSuccess(1);
-            Map<String, String> data = new HashMap<>();
+            Map<String, Object> data = new HashMap<>();
             data.put("token", tokenService.storeToken(user.getId()));
             data.put("useId", user.getId());
             data.put("useName", user.getUserName());
+            data.put("userType",user.getUserType());
             restData.setData(data);
         }
         return restData;
