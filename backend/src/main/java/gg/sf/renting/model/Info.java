@@ -3,15 +3,22 @@ package gg.sf.renting.model;
 import gg.sf.renting.enums.SexLimit;
 import lombok.Data;
 
+import javax.persistence.MappedSuperclass;
+
 
 /**
  * Created by veryyoung on 2015/10/24.
  */
 
 @Data
+@MappedSuperclass
 public class Info {
 
-    private Location location;
+    private Double longitude;
+
+    private Double latitude;
+
+    private String community;
 
     private boolean jointRent;
 
@@ -27,6 +34,7 @@ public class Info {
 
     private String userId;
 
+    private Double area;
 
 
 }

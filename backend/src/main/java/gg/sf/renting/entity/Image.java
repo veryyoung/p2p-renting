@@ -19,5 +19,10 @@ public class Image {
     @Column(length = 32)
     private String id;
 
-    private String roomId;
+    private String infoId;
+
+    public Image(String infoId) {
+        this.infoId = infoId;
+    }
+
 }

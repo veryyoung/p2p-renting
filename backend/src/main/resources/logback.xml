@@ -14,7 +14,7 @@
   </appender>
 
   <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-    <file>../logs/movie.log</file>
+    <file>../logs/renting.log</file>
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
       <!-- daily rollover -->
       <fileNamePattern>../logs/logs_%d{yyyy-MM-dd}.log</fileNamePattern>
