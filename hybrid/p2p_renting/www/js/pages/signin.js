@@ -57,7 +57,12 @@ define(['module', 'common'],function(module, common){
             common.DoLogin(res.data.token);
             common.SetUserSession(res.data.userName, res.data.userId);
             
-            jxhl.utility.loadJxhlLayout('profile');
+            //分别进租客与房东的界面
+            var userType = res.data.userType || '';
+            if(userType=='RENTER')
+                jxhl.utility.loadJxhlLayout('renter/wait');
+            else
+                jxhl.utility.loadJxhlLayout('landlord/wait');
         });
     }
 

@@ -22,14 +22,17 @@ define(['module', 'common'],function(module, common){
     Func.prototype.bindEvent = function(){
         var self = this;
         
-        this.jxhlLocalVars[4].onclick = function(){
+        this.jxhlLocalVars[7].onclick = function(){
             jxhl.utility.loadJxhlLayout('signin');
         }
         
-        this.jxhlLocalVars[3].onclick = function(){
+        this.jxhlLocalVars[6].onclick = function(){
             var mobile = $.trim(self.jxhlLocalVars[1].value);
             var userName = $.trim(self.jxhlLocalVars[0].value);
             var pwd = $.trim(self.jxhlLocalVars[2].value);
+            var age = $.trim(self.jxhlLocalVars[4].value);
+            var male = self.jxhlLocalVars[3].value==1?true:false;
+            var userType = self.jxhlLocalVars[5].value;
             
             if(!userName){
                 self.jxhlLocalVars[0].focus();
@@ -46,15 +49,23 @@ define(['module', 'common'],function(module, common){
                 return;
             }
             
-            self.doLogin.apply(self, [userName, mobile, pwd]);
+            if(!age || !$.isNumeric(age) || parseInt(age)<18){
+                self.jxhlLocalVars[4].focus();
+                return;
+            }
+            
+            self.doLogin.apply(self, [userName, mobile, pwd, 
+            male, parseInt(age), userType]);
         }
     }
     
-    Func.prototype.doLogin = function(userName, mobile, pwd){
+    Func.prototype.doLogin = function(userName, mobile, pwd,
+        male, age, userType){
         var self = this;
         
         jxhl.utility.postJSON('register', null, 
-            {userName: userName, mobile:mobile, password:pwd}, function(res){
+            {userName: userName, mobile:mobile, password:pwd,
+                male:male, age:age, userType:userType}, function(res){
             if(!res.success){
                 jxhl.utility.alert(res.comment);
                 return;
@@ -63,7 +74,12 @@ define(['module', 'common'],function(module, common){
             common.DoLogin(res.data.token);
             common.SetUserSession(userName, res.data.userId);
             
-            jxhl.utility.loadJxhlLayout('profile');
+            if(userType=='RENTER')
+                jxhl.utility.loadJxhlLayout('renter/wait');
+            else
+                jxhl.utility.loadJxhlLayout('landlord/wait');
+        },function(xhr, status){
+            jxhl.utility.alert(status);
         });
     }
 
