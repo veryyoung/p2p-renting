@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jxhl xmlns="http://halo-studio.com/jxhl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://halo-studio.com/jxhl ../js/jxhl.xsd">
+    <panel dock="fill">
+        <html local_var="top_container" dock="fill" css_name="body">
+            <div id="top_container" class="ui-body" style="overflow:hidden;">
+
+            </div>
+        </html>
+    </panel>
+    <runnable>
+        <![CDATA[
+        /*fixed ios7 -webkit-overflow-scrolling:touch issue*/
+        if(!/iPhone OS 7/.test(navigator.userAgent)){
+          jxhl.utility.loadCssFile(jxhl.utility.layoutBaseUri + "css/non-ios7-hack.css");
+        }
+        
+        var c = document.getElementById("top_container");
+        var timer;
+
+        function adjustContainer(){
+            //resolve resize event fires twice
+            if(timer){
+                clearTimeout(timer);
+            }
+            timer = setTimeout(function(){
+                jxhl.utility.debugObject(['adjust container by resize event', $(top_container).height()]);
+                c.style.height = $(top_container).height() + "px";
+                jxhl.notifyResize(c);
+            },10);
+        }
+
+        adjustContainer();
+
+        var isMobile = /Android|webOS|iOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        if(!isMobile){
+          if(window.addEventListener){
+              window.addEventListener('resize', adjustContainer, false);
+          }
+          else{
+              window.attachEvent('resize', adjustContainer);
+          }
+        }
+
+        jxhl.utility.topContainer = c;
+       
+        jxhl.utility.loadJxhlLayout('index', jxhl$arguments);
+        ]]>
+    </runnable>
+</jxhl>

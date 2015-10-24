@@ -1,0 +1,576 @@
+*{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    z-index:1;
+    
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    font-size:1.25em;
+    background: #fff;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    overflow: hidden;
+    /*-webkit-overflow-scrolling: touch;*/
+    -webkit-font-smoothing: antialiased;
+    font-family:"Helvetica Neue",Helvetica, Arial, sans-serif;
+    box-shadow: none;
+    text-shadow: none;
+    color:#4e5f6f;
+}
+input,textarea{
+	-webkit-user-select: auto; 
+	outline:none; 
+}
+input{
+    border:1px solid #efefef;
+    height:40px;
+    box-shadow:none;
+    border-radius:0px;
+    margin:0px;
+    padding:0px 10px;
+    color:#666;
+}
+    input[type=file]:checked,input[type=file]:active,input[type=file]:focus,input[type=file]::after {
+        outline:none;
+        border:none;
+    }
+textarea{
+    border:1px solid #efefef;
+    height:200px;
+    box-shadow:none;
+    border-radius:0px;
+    margin:0px;
+    padding:10px;
+    color:#666;
+}
+
+input[type=date],input[type=time]{
+    background:none;
+}
+input[type=file] {
+  color: transparent;
+  border: none;
+  height: 24px;
+  background: transparent;
+  width: 80px;
+  display: inline-block;
+  overflow:hidden;
+}
+html, body, div {
+    overflow-x: hidden;
+}
+
+ul,li{ list-style:none; padding:0 ; margin:0}
+
+h1 {
+    font-size: 1.5em;
+}
+
+small, .small {
+    font-size: 0.875em;
+}
+
+img, video {
+    max-width: 100%;
+}
+
+select {
+    line-height: 25px;
+    height: 25px;
+    border: 1px solid gray;
+    outline: none;
+    border-style: solid;
+    -webkit-appearance: none;
+    background:transparent;
+}
+
+i{
+    color:#007aff;
+    font-size:18px;
+    vertical-align:middle;
+}
+.fa {
+    color:#4e5f6f;
+    vertical-align:middle;
+}
+.fa-1x5 {
+    font-size:1.5em;
+}
+
+.app-scroll{
+    z-index:1;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+/*.app-scroll * {
+    -webkit-transform: translate3d(0,0,0);
+}*/
+
+/* TODO:some 50*50 aspect ratio icon background size */
+.icon-back{
+}
+.icon-home{
+}
+.icon-input-mobile{
+}
+.icon-input-captcha{
+}
+.icon-input-pwd{
+}
+
+.icon-right{
+}
+
+.pull-left{
+    float:left;
+}
+.pull-right{
+    float:right;
+}
+.clearfix{
+    clear:both;
+}
+
+.text-right{
+    text-align:right;
+}
+.text-center{
+    text-align:center;
+}
+.text-left{
+    text-align:left;
+}
+
+.font-normal{
+    font-size:1.25em!important;
+}
+.font-middle{
+    font-size:1.35em!important;
+}
+.font-large{
+    font-size:1.5em!important;
+}
+.font-xlarge{
+    font-size:2em!important;
+}
+.font-xxlarge{
+    font-size:2.5em!important;
+}
+.font-small{
+    font-size:1.0em!important;
+}
+.font-xsmall{
+    font-size:0.875em!important;
+}
+
+.margin-top-10{
+    margin-top:10px;
+}
+.margin-top-20{
+    margin-top:20px;
+}
+.margin-top-30{
+    margin-top:30px;
+}
+.margin-top-40{
+    margin-top:40px;
+}
+
+.circle{
+    border-radius:50%;
+}
+
+.bg-gray{
+    background:#ebebeb;
+}
+.bg-white{
+    background:#fff;
+}
+.bg-smoke {
+    background:#f7f8fa;
+}
+.border-gray{
+    border-color:#ebebeb;
+}
+.gray{
+    color:#888888;
+}
+.white{
+    color:#fff;
+}
+.dark{
+    color:#444;
+}
+.smoke-white{
+    color:#efefef;
+}
+.blue {
+    color:#378dcc;
+}
+.high-green {
+    color:#65d89f;
+}
+.vi-orange {
+    color:#FDB813;
+}
+.vi-red{
+    color:#EF4023;
+}
+.vi-green{
+    color:#00A8BD;
+}
+.back-vi-orange {
+    background-color:#FDB813;
+}
+.back-vi-red{
+    background-color:#EF4023;
+}
+.back-vi-green{
+    background-color:#00A8BD;
+}
+.border-vi-orange {
+    border-color:#FDB813;
+}
+.border-vi-red{
+    border-color:#EF4023;
+}
+.border-vi-green{
+    border-color:#00A8BD;
+}
+
+/*�������ĵ� ͷ���ⲿdiv*/
+.brand-head {
+    margin:20px 0px 10px 0px; overflow:hidden;
+    padding:5px 0px;
+}
+
+img.bordered5 {
+   box-shadow: 0px 0px 0px 5px rgba(255,255,255,0.3); 
+}
+
+.float-button {
+    width:auto;
+    padding:0px 12px;
+    height:24px;
+    display:block;
+    line-height:24px;
+    text-align:center;
+    background:rgba(255,255,255, 0.3);
+    border-radius:12px;
+}
+
+    .float-button .fa-reply {
+        color:#fff;
+        font-size:1.05em;
+    }
+
+.tip-round{
+    border-radius:50%; width:20px; height:20px; line-height:20px; font-size:0.75em; display:inline-block; text-align:center; background:red; color:white; vertical-align:middle; margin-right:5px;
+}
+
+.user-level {
+    font-style:italic; color:white; background-color:red;border-radius:2px; padding:0px 1px;
+}
+.user-credit{
+    font-style:italic; color:white; border-radius:2px; padding:0px 1px; margin-right:3px;
+}
+
+.emotion-container {
+    background:#fff;
+    border:1px solid #e8e8e8;
+    position:absolute; 
+    margin-left:10px; 
+    margin-right:10px; 
+    z-index:101;
+}
+.emotion-container .list-inline{
+    margin:5px;
+}
+.emotion-item {
+    padding:3px;
+    height:30px;
+    width:34px;
+    overflow:hidden;
+}
+
+/*
+ * button, input styles
+ */
+.form{
+    margin:0px;
+}
+.form .form-group{
+    margin:20px 0px;
+    padding:0px!important;
+}
+.form .form-group .control-label{
+    height:40px;
+    line-height:40px;
+    margin:0px!important;
+    overflow:hidden;
+}
+
+.row{
+    /*margin:0px;*/
+}
+
+.profile-list{
+    padding:0px 10px;
+}
+.profile-list .group{
+    padding:0px!important;
+    margin:0px!important;
+    height:56px;
+    line-height:56px;
+    overflow:hidden;
+    border-bottom:1px solid #e7e4e4;
+}
+.profile-list .group .prop{
+    color:#000!important;
+}
+
+.btn{
+    border-radius:3px;
+    border:none;
+    width:100%;
+    height:34px;
+    line-height:34px;
+    text-align:center;
+    padding:0px;
+    margin:0px;
+}
+.btn:active, .btn:focus{
+    color:#fff;
+    outline:none;
+}
+.btn-seahouse{
+    background:#00d2d2;
+    color:#fff;
+}
+.btn-brightgreen{
+    background:#90c320;
+    color:#fff;
+}
+.btn-red{
+    background:#f64242;
+    color:#fff;
+}
+
+.btn-xs{
+    padding:0px 5px;
+    width:auto;
+    height:20px;
+    line-height: 20px;
+}
+
+.color-blue{
+    color:#60a0f7;
+}
+.color-gray{
+    color:#666!important;
+}
+
+.back-light{
+    background-color:#f2f2f2;
+}
+
+/* the following class is set for wrapper,header,body,footer
+ * we should not use text-shadow and box-shadow in mobile
+ * suggest to use transform for animation
+ */
+.welcome-slider-block
+{
+    -webkit-transform: translateZ(0px);
+    -webkit-perspective: 1000;
+    -webkit-transform-style: preserve-3d;
+
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -ms-perspective: 1000;
+    perspective: 1000;
+
+    transition: -webkit-transform .5s ease;
+}
+
+.footer-input{
+    height:45px;
+    line-height: 45px;
+    background-color: #3a3e4a;
+    color:#fff;
+    overflow:hidden;
+}
+
+.ui-body {
+    position: relative;
+    overflow: hidden;
+    -webkit-transform: translateZ(0px);
+    -webkit-perspective: 1000;
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -ms-perspective: 1000;
+    perspective: 1000;
+    transition: -webkit-transform .5s ease;
+    -webkit-transform: translate3d(0%, 0, 0);
+}
+
+.ui-head-container{
+    overflow:hidden;
+}
+
+.ui-head-container>div {
+    border-bottom:1px solid #00a8bd;
+    display:block; margin-top:3px; height:42px; line-height:40px; overflow:hidden; position:relative;
+}
+
+.ui-head,.ui-head .row{
+    overflow:hidden;
+}
+    .ui-head span {
+        font-size:1.25em;
+    }
+
+.ui-footer-container {
+    z-index:99;
+    overflow:hidden;
+}
+
+.ui-footer{
+    font-size:0.85em;
+    overflow:hidden;
+}
+
+/*css3 loading*/
+.loading-wrap {
+    position:absolute;
+    z-index:99999;
+    left:0px;
+    top:0px;
+    background:rgba(0,0,0,0.1);
+}
+
+.loading {
+  margin: 100px auto;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  overflow:visible!important;
+}
+
+.loading .container1 > div, .loading .container2 > div, .loading .container3 > div {
+  width: 6px;
+  height: 6px;
+  background-color: #00A8BD;
+
+  border-radius: 100%;
+  position: absolute;
+  -webkit-animation: bouncedelay 1.2s infinite ease-in-out;
+  animation: bouncedelay 1.2s infinite ease-in-out;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.loading .loading-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin-left:1px;
+}
+
+.loading .container2 {
+  -webkit-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+}
+
+.loading .container3 {
+  -webkit-transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
+}
+
+.loading .circle1 { top: 0; left: 0; }
+.loading .circle2 { top: 0; right: 0; }
+.loading .circle3 { right: 0; bottom: 0; }
+.loading .circle4 { left: 0; bottom: 0; }
+
+.loading .container2 .circle1 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.loading .container3 .circle1 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+.loading .container1 .circle2 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.loading .container2 .circle2 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+.loading .container3 .circle2 {
+  -webkit-animation-delay: -0.7s;
+  animation-delay: -0.7s;
+}
+
+.loading .container1 .circle3 {
+  -webkit-animation-delay: -0.6s;
+  animation-delay: -0.6s;
+}
+
+.loading .container2 .circle3 {
+  -webkit-animation-delay: -0.5s;
+  animation-delay: -0.5s;
+}
+
+.loading .container3 .circle3 {
+  -webkit-animation-delay: -0.4s;
+  animation-delay: -0.4s;
+}
+
+.loading .container1 .circle4 {
+  -webkit-animation-delay: -0.3s;
+  animation-delay: -0.3s;
+}
+
+.loading .container2 .circle4 {
+  -webkit-animation-delay: -0.2s;
+  animation-delay: -0.2s;
+}
+
+.loading .container3 .circle4 {
+  -webkit-animation-delay: -0.1s;
+  animation-delay: -0.1s;
+}
+
+@-webkit-keyframes bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0.0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes bouncedelay {
+  0%, 80%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 40% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
