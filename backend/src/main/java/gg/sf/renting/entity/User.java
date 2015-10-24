@@ -1,7 +1,6 @@
 package gg.sf.renting.entity;
 
 import lombok.Data;
-import gg.sf.renting.validator.constraints.UserName;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -23,7 +22,6 @@ public class User {
     private String id;
 
     @Column(length = 20)
-    @UserName
     private String userName;
 
     @Column(length = 32)

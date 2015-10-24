@@ -4,7 +4,6 @@ import gg.sf.renting.dao.UserDao;
 import gg.sf.renting.entity.User;
 import gg.sf.renting.service.BaseService;
 import gg.sf.renting.service.UserService;
-import gg.sf.renting.validator.InvalidException;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,18 +24,10 @@ public class UserServiceImpl extends BaseService implements UserService {
 
     @Override
     public boolean addUser(User user) {
-
         user.setPassword(DigestUtils.md5Hex(user.getPassword()));
         user.setCreateTime(new Date());
-        try {
-            getValidatorWrapper().tryValidate(user);
-            userDao.create(user);
-            return true;
-        } catch (InvalidException ex) {
-            logger.error("Invalid User Object: {}", user.toString(), ex);
-            return false;
-        }
-
+        userDao.create(user);
+        return true;
     }
 
     @Override

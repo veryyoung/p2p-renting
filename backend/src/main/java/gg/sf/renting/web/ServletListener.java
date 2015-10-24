@@ -25,7 +25,6 @@ public class ServletListener implements ServletContextListener {
                 .autowireBean(this);
 
         ServletContext context = servletContextEvent.getServletContext();
-        context.setAttribute("appName", "Skeleton");
 
     }
 

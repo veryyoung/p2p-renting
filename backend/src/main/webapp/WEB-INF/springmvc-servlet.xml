@@ -49,9 +49,5 @@
     <context:annotation-config/>
 
 
-    <mvc:interceptors>
-        <bean class="gg.sf.renting.web.AuthenticationFilter"></bean>
-    </mvc:interceptors>
-
 
 </beans>

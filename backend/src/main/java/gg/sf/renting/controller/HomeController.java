@@ -3,11 +3,6 @@ package gg.sf.renting.controller;
 import gg.sf.renting.entity.User;
 import gg.sf.renting.rest.RestData;
 import gg.sf.renting.service.UserService;
-import gg.sf.renting.utils.ContextUtils;
-import gg.sf.renting.security.LoginRequired;
-import gg.sf.renting.utils.WebUtils;
-import org.apache.commons.codec.digest.DigestUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,31 +21,9 @@ public class HomeController extends BaseController {
     private UserService userService;
 
 
-    @RequestMapping("/")
-    public ModelAndView index() {
-        ModelAndView modelAndView = new ModelAndView("/index");
-        modelAndView.addObject("users", userService.findAll());
-        return modelAndView;
-    }
-
-
-    @RequestMapping(value = "/register", method = RequestMethod.GET)
-    public String getRegister() {
-        return "/register";
-    }
-
-
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public ModelAndView register(User user, String captcha) {
-        ModelAndView modelAndView = new ModelAndView("/register");
-        if (!WebUtils.checkCaptcha(request, captcha)) {
-            modelAndView.addObject("error", "验证码错误");
-            return modelAndView;
-        }
-
         userService.addUser(user);
-
-
         return new ModelAndView("redirect:/");
     }
 
@@ -66,39 +39,6 @@ public class HomeController extends BaseController {
         return restData;
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public ModelAndView getLogin(String redirect) {
-        ModelAndView modelAndView = new ModelAndView("/login");
-        if (StringUtils.isNotEmpty(redirect)) {
-            modelAndView.addObject("error", "您需要先登录!");
-        }
-        return modelAndView;
-    }
-
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public ModelAndView login(String userName, String password, String captcha) {
-        ModelAndView modelAndView = new ModelAndView("/login");
-        if (!WebUtils.checkCaptcha(request, captcha)) {
-            modelAndView.addObject("error", "验证码错误");
-            return modelAndView;
-        }
-
-        User user = userService.findByUserName(userName);
-
-        if (null != user && user.getPassword().equals(DigestUtils.md5Hex(password))) {
-            ContextUtils.getSessionUtils(request).setUser(user);
-            return new ModelAndView("redirect:/account");
-        } else {
-            modelAndView.addObject("error", "用户名或密码错误");
-            return modelAndView;
-        }
-    }
-
-    @RequestMapping(value = "/account", method = RequestMethod.GET)
-    @LoginRequired
-    public String getAccount() {
-        return "/account";
-    }
 
     @RequestMapping("logout")
     public String logout() {
