@@ -3,6 +3,8 @@ package gg.sf.renting.dao;
 import gg.sf.renting.entity.RenterInfo;
 import org.springframework.stereotype.Repository;
 
+
+
 /**
  * Created by veryyoung on 2015/10/24.
  */

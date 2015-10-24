@@ -2,10 +2,8 @@ package gg.sf.renting.service.impl;
 
 import gg.sf.renting.dao.LandInfoDao;
 import gg.sf.renting.dao.RenterInfoDao;
-import gg.sf.renting.dao.RoomDao;
 import gg.sf.renting.entity.LandlordInfo;
 import gg.sf.renting.entity.RenterInfo;
-import gg.sf.renting.entity.Room;
 import gg.sf.renting.model.Info;
 import gg.sf.renting.service.BaseService;
 import gg.sf.renting.service.InfoService;
@@ -27,26 +25,15 @@ public class InfoServiceImpl extends BaseService implements InfoService {
     @Autowired
     private RenterInfoDao renterInfoDao;
 
-    @Autowired
-    private RoomDao roomDao;
 
     @Override
     public String addLandInfo(LandlordInfo info) {
-        String infoId = landInfoDao.create(info);
-        if (StringUtils.isNoneEmpty(infoId)) {
-            for (Room room : info.getRooms()) {
-                roomDao.create(room);
-            }
-        }
-        return infoId;
+        return landInfoDao.create(info);
     }
 
     @Override
     public LandlordInfo getLandInfo(String id) {
-        LandlordInfo info = landInfoDao.find(id);
-        List<Room> rooms = roomDao.findAll();
-        info.setRooms(rooms);
-        return info;
+        return landInfoDao.find(id);
     }
 
     @Override
