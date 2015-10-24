@@ -49,4 +49,9 @@ public class UserServiceImpl extends BaseService implements UserService {
         }
         return userDao.findByUserName(userName);
     }
+
+    @Override
+    public User findByMobile(String mobile) {
+        return userDao.findByMobile(mobile);
+    }
 }

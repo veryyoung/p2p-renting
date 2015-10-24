@@ -16,4 +16,6 @@ public interface UserService {
     boolean checkUserName(String userName);
 
     User findByUserName(String userName);
+
+    User findByMobile(String mobile);
 }

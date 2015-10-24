@@ -32,7 +32,7 @@ public class QiniuUtils {
     /**
      * 上传对应主题的图片到七牛云
      */
-    public static void upload(String filePath, String fileName) {
+    public static String upload(String filePath, String fileName) {
 
         Mac mac = new Mac(ACCESS_KEY, SECRET_KEY);
         PutPolicy putPolicy = new PutPolicy(BUCKET_NAME);
@@ -43,13 +43,11 @@ public class QiniuUtils {
             e.printStackTrace();
         }
 
-        System.out.println(uptoken);   //输出上传凭证
-
         PutExtra putExtra = new PutExtra();
 
         PutRet putRet = IoApi.putFile(uptoken, fileName, filePath, putExtra);
 
-        System.out.println(putRet.getKey());    //输出上传到七牛云之后的文件名称
+        return putRet.getKey();    //输出上传到七牛云之后的文件名称
 
     }
 

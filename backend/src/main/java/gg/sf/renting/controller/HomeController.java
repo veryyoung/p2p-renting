@@ -4,6 +4,7 @@ import gg.sf.renting.entity.User;
 import gg.sf.renting.rest.RestData;
 import gg.sf.renting.service.TokenService;
 import gg.sf.renting.service.UserService;
+import gg.sf.renting.utils.MobileUtils;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,7 +58,12 @@ public class HomeController extends BaseController {
             restData.setComment("账户名或密码不能为空");
             return restData;
         }
-        User user = userService.findByUserName(userName);
+        User user;
+        if (MobileUtils.isMobile(userName)) {
+            user = userService.findByMobile(userName);
+        } else {
+            user = userService.findByUserName(userName);
+        }
         if (null == user || !user.getPassword().equals(DigestUtils.md5Hex(password))) {
             restData.setComment("账户名或密码错误");
         } else {
@@ -67,7 +73,7 @@ public class HomeController extends BaseController {
             data.put("token", tokenService.storeToken(user.getId()));
             data.put("useId", user.getId());
             data.put("useName", user.getUserName());
-            data.put("userType",user.getUserType());
+            data.put("userType", user.getUserType());
             restData.setData(data);
         }
         return restData;

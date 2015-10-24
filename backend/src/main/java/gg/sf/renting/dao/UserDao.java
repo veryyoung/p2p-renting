@@ -30,5 +30,13 @@ public class UserDao extends BaseDao<User> {
         return (User) query.uniqueResult();
     }
 
+    public User findByMobile(String mobile) {
+        Query query = getCurrentSession().createQuery("from User as user where user.mobile = :mobile");
+        query.setString("mobile", mobile);
+        return (User) query.uniqueResult();
+    }
+
+
+
 
 }
