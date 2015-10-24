@@ -37,6 +37,12 @@ public class HomeController extends BaseController {
         userService.addUser(user);
         restData.setSuccess(1);
         restData.setComment("注册成功");
+        Map<String, Object> data = new HashMap<>();
+        data.put("token", tokenService.storeToken(user.getId()));
+        data.put("useId", user.getId());
+        data.put("useName", user.getUserName());
+        data.put("userType", user.getUserType());
+        restData.setData(data);
         return restData;
     }
 
