@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jxhl xmlns="http://halo-studio.com/jxhl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://halo-studio.com/jxhl ../../js/jxhl.xsd">
+    <html dock="fill" css_name="app-scroll">
+        <div class="container">
+            <div class="form">
+                <div class="form-group">
+                    <select local_var="txt_jointrent" class="form-control" placeholder="合租">
+                        <option value="1">合租</option>
+                        <option value="2">整租</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input local_var="txt_peoplenumber" type="number" class="form-control" placeholder="人数"/>
+                </div>
+                <div class="form-group">
+                    <select local_var="txt_sexlimit" class="form-control" placeholder="合租性别">
+                        <option value="ANY">性别不限</option>
+                        <option value="MALE">限男性</option>
+                        <option value="FEMALE">限女性</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input local_var="txt_acreage" type="text" class="form-control" placeholder="面积"/>
+                </div>
+                <div class="form-group">
+                    <input local_var="txt_minprice" type="text" class="form-control" placeholder="最低价格"/>
+                </div>
+                <div class="form-group">
+                    <input local_var="txt_maxprice" type="text" class="form-control" placeholder="最高价格"/>
+                </div>
+                <div class="form-group">
+                    <a local_var="txt_location">选取小区</a>
+                </div>
+                <div class="form-group">
+                    <input local_var="txt_arearange" type="text" class="form-control" placeholder="x公里范围内"/>
+                </div>
+                <div class="form-group">
+                    <button local_var="btn_publish" type="button" class="btn btn-primary">确认发布</button>
+                </div>
+            </div>
+        </div>
+    </html>
+    <runnable>
+        <![CDATA[
+            require(['pages/renter-publish'], function(a){
+                a.init(jxhl$container, jxhl$arguments, jxhl$localVars);
+            });
+        ]]>
+    </runnable>
+</jxhl>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jxhl xmlns="http://halo-studio.com/jxhl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://halo-studio.com/jxhl ../../js/jxhl.xsd">
+    <html dock="fill" css_name="app-scroll">
+        <div class="container">
+            <div class="form">
+               推荐房源查询中..
+            </div>
+        </div>
+    </html>
+    <runnable>
+        <![CDATA[
+            require(['pages/renter-suggest'], function(a){
+                a.init(jxhl$container, jxhl$arguments, jxhl$localVars);
+            });
+        ]]>
+    </runnable>
+</jxhl>
