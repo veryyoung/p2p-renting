@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface UserService {
 
-    boolean addUser(User user);
+    String addUser(User user);
 
     List<User> findAll();
 

@@ -10,8 +10,6 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class BaseService {
 
-
-
     protected Logger logger = null;
 
     public BaseService() {

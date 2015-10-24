@@ -23,11 +23,10 @@ public class UserServiceImpl extends BaseService implements UserService {
     private UserDao userDao;
 
     @Override
-    public boolean addUser(User user) {
+    public String addUser(User user) {
         user.setPassword(DigestUtils.md5Hex(user.getPassword()));
         user.setCreateTime(new Date());
-        userDao.create(user);
-        return true;
+        return userDao.create(user);
     }
 
     @Override

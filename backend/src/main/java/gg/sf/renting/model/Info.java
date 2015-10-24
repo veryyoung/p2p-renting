@@ -1,25 +1,15 @@
 package gg.sf.renting.model;
 
-import gg.sf.renting.entity.Room;
 import gg.sf.renting.enums.SexLimit;
-import org.hibernate.annotations.GenericGenerator;
+import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import java.util.List;
 
 /**
  * Created by veryyoung on 2015/10/24.
  */
 
+@Data
 public class Info {
-
-    @Id
-    @GeneratedValue(generator = "system-uuid")
-    @GenericGenerator(name = "system-uuid", strategy = "uuid")
-    @Column(length = 32)
-    private String id;
 
     private Location location;
 
@@ -33,18 +23,7 @@ public class Info {
 
     private SexLimit sexLimit;
 
-    private List<Room> rooms;
-
-
-
-
-
-
-
-
-
-
-
+    private double acreage;
 
 
 }
