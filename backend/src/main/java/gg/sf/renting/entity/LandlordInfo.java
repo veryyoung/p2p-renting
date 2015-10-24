@@ -25,8 +25,11 @@ public class LandlordInfo extends Info {
 
     private double price;
 
-    private String traffic;
+    @Transient
+    private List<Image> images;
 
+    @Transient
+    private List<String> base64Images;
 
 
 }

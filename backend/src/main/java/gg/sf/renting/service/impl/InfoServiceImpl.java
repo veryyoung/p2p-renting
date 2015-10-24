@@ -1,7 +1,9 @@
 package gg.sf.renting.service.impl;
 
+import gg.sf.renting.dao.ImageDao;
 import gg.sf.renting.dao.LandInfoDao;
 import gg.sf.renting.dao.RenterInfoDao;
+import gg.sf.renting.entity.Image;
 import gg.sf.renting.entity.LandlordInfo;
 import gg.sf.renting.entity.RenterInfo;
 import gg.sf.renting.model.Info;
@@ -10,6 +12,7 @@ import gg.sf.renting.service.InfoService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import java.util.List;
 
@@ -25,15 +28,25 @@ public class InfoServiceImpl extends BaseService implements InfoService {
     @Autowired
     private RenterInfoDao renterInfoDao;
 
+    @Autowired
+    private ImageDao imageDao;
+
 
     @Override
     public String addLandInfo(LandlordInfo info) {
-        return landInfoDao.create(info);
+        String infoId = landInfoDao.create(info);
+        List<String> base64Images = info.getBase64Images();
+        if(!CollectionUtils.isEmpty(base64Images)){
+            imageDao.create(new Image(infoId));
+        }
+        return infoId;
     }
 
     @Override
     public LandlordInfo getLandInfo(String id) {
-        return landInfoDao.find(id);
+        LandlordInfo landlordInfo = landInfoDao.find(id);
+        landlordInfo.setImages(imageDao.findByInfoId(id));
+        return landlordInfo;
     }
 
     @Override

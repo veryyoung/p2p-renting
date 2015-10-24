@@ -1,5 +1,6 @@
 package gg.sf.renting.controller;
 
+import gg.sf.renting.entity.LandlordInfo;
 import gg.sf.renting.entity.RenterInfo;
 import gg.sf.renting.rest.RestData;
 import gg.sf.renting.service.InfoService;
@@ -19,9 +20,22 @@ public class InfoController {
     private InfoService infoService;
 
     @RequestMapping("publish/renter")
-    public RestData publish(RenterInfo renterInfo) {
+         public RestData publish(RenterInfo renterInfo) {
         RestData restData = new RestData();
         String infoId = infoService.addRenterInfo(renterInfo);
+        if(StringUtils.isNoneEmpty(infoId)){
+            restData.setSuccess(1);
+            restData.setComment("信息发布成功");
+        }else {
+            restData.setComment("发布失败，请校验数据格式");
+        }
+        return restData;
+    }
+
+    @RequestMapping("publish/landlord")
+    public RestData publishLand(LandlordInfo landlordInfo) {
+        RestData restData = new RestData();
+        String infoId = infoService.addLandInfo(landlordInfo);
         if(StringUtils.isNoneEmpty(infoId)){
             restData.setSuccess(1);
             restData.setComment("信息发布成功");
