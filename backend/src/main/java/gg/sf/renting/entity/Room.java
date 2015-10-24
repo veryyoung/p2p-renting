@@ -3,10 +3,7 @@ package gg.sf.renting.entity;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by veryyoung on 2015/10/24.
@@ -14,6 +11,7 @@ import javax.persistence.Id;
 
 @Data
 @Entity
+@Table(name = "room")
 public class Room {
 
     @Id

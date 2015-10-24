@@ -2,8 +2,9 @@ package gg.sf.renting.entity;
 
 import gg.sf.renting.model.Info;
 import lombok.Data;
+import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.util.List;
 
 
@@ -12,7 +13,14 @@ import java.util.List;
  */
 @Data
 @Entity
+@Table(name = "renter_info")
 public class RenterInfo extends Info {
+
+    @Id
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid")
+    @Column(length = 32)
+    private String id;
 
     private String userId;
 
@@ -22,8 +30,6 @@ public class RenterInfo extends Info {
 
     // 区域范围
     private Double areaRange;
-
-    private List<Room> rooms;
 
 
 }
