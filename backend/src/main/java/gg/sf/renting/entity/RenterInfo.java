@@ -22,8 +22,6 @@ public class RenterInfo extends Info {
     @Column(length = 32)
     private String id;
 
-    private String userId;
-
     private int minPrice;
 
     private int maxPrice;

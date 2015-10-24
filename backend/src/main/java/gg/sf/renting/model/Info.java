@@ -17,13 +17,16 @@ public class Info {
 
     /**
      * 对租客来说，是租住人的个数；
-     * 对房东来说，是限住认识
+     * 对房东来说，是限住人数
      */
     private int peopleNumber;
 
     private SexLimit sexLimit;
 
     private double acreage;
+
+    private String userId;
+
 
 
 }
