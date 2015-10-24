@@ -21,12 +21,12 @@
         <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
     </feature>
     <allow-intent href="market:*" />
-    <name>HelloCordova</name>
+    <name>p2p-renting</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        个人对个人租房
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="xjfhnsd@163.com" href="http://cordova.io">
+        2^10 Team
     </author>
     <content src="index.html" />
     <access origin="*" />

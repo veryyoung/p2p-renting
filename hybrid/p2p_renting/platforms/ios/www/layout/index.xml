@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <jxhl xmlns="http://halo-studio.com/jxhl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://halo-studio.com/jxhl ../js/jxhl.xsd">
-    <panel dock="fill" css_text="background-color:rgb(0,0,0);">
+    <panel dock="fill">
         <html dock="center" width="1.0*" height="30" css_name="app-scroll">
             <div local-id="div-main" class="container text-center" style="color:white;">
                 Hello, renting..

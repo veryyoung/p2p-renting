@@ -33,18 +33,25 @@
         if(!window.Renting_AccessToken){
             window.Renting_AccessToken = jxhl.utility.getLocalStorage('Renting_AccessToken');
         }
-        if(!window.Renting_UserName){
-            window.Renting_UserName = jxhl.utility.getLocalStorage('Renting_UserName');
-        }
-        if (!window.Renting_AccessToken || !window.Renting_UserName) {
+        if (!window.Renting_AccessToken) {
             jxhl.utility.loadJxhlLayout('signin');
             return false;
         }
         return true;
     }
+    
+    lib.DoLogin = function(token){
+        window.Renting_AccessToken = token;
+        jxhl.utility.setLocalStorage('Renting_AccessToken', token);
+    }
 
     lib.GetUserSession = function () {
         return [window.Renting_AccessToken, window.Renting_UserName, window.Renting_UserId];
+    }
+    
+    lib.SetUserSession = function(userName, userId){
+        window.Renting_UserName = userName;
+        window.Renting_UserId = userId;
     }
 
     lib.Alert = function (str) {

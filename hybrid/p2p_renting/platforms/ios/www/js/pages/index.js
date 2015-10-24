@@ -18,6 +18,7 @@ define(['module', 'common'],function(module, common){
         
         $(container).find('div[local-id=div-main]').html('haha! fun!');
         
+        //注入需要登录
         common.RequireLogin();
     }
 
