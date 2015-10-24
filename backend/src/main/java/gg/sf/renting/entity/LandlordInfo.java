@@ -13,7 +13,7 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "land_info")
-public class LandlordInfo extends Info{
+public class LandlordInfo extends Info {
 
     @Id
     @GeneratedValue(generator = "system-uuid")
@@ -28,9 +28,6 @@ public class LandlordInfo extends Info{
     private String traffic;
 
     private String around;
-
-    @Transient
-    private List<Room> rooms;
 
 
 }
