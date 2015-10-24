@@ -13,7 +13,7 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "user")
+@Table(name = "user", uniqueConstraints = @UniqueConstraint(columnNames = {"userName","mobile"}))
 public class User {
 
     @Id

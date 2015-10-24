@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,15 +35,21 @@ public class HomeController extends BaseController {
     @RequestMapping("/register")
     public RestData register(User user) {
         RestData restData = new RestData();
-        userService.addUser(user);
-        restData.setSuccess(1);
-        restData.setComment("注册成功");
-        Map<String, Object> data = new HashMap<>();
-        data.put("token", tokenService.storeToken(user.getId()));
-        data.put("useId", user.getId());
-        data.put("useName", user.getUserName());
-        data.put("userType", user.getUserType());
-        restData.setData(data);
+
+        String userId = userService.addUser(user);
+        if (StringUtils.isNotEmpty(userId)) {
+            restData.setSuccess(1);
+            restData.setComment("注册成功");
+            Map<String, Object> data = new HashMap<>();
+            data.put("token", tokenService.storeToken(user.getId()));
+            data.put("useId", user.getId());
+            data.put("useName", user.getUserName());
+            data.put("userType", user.getUserType());
+            restData.setData(data);
+        } else {
+            restData.setComment("发生了一些问题，可能是参数不正确哦");
+        }
+
         return restData;
     }
 

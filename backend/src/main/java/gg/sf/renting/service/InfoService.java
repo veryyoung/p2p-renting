@@ -1,6 +1,7 @@
 package gg.sf.renting.service;
 
 import gg.sf.renting.entity.LandlordInfo;
+import gg.sf.renting.entity.RenterInfo;
 import gg.sf.renting.model.Info;
 
 /**
@@ -13,6 +14,8 @@ public interface InfoService {
     Info getLandInfo(String id);
 
     Info getRentInfo(String id);
+
+    String addRenterInfo(RenterInfo renterInfo);
 
 
 
