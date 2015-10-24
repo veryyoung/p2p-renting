@@ -1,0 +1,23 @@
+{
+  "name": "cordova-plugin-cache",
+  "version": "1.0.4",
+  "description": "Cordova Clear Cache Plugin",
+  "cordova": {
+    "id": "cordova-plugin-cache",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tiltshiftfocus/cordova-plugin-cache"
+  },
+  "keywords": [
+    "cordova",
+    "cache",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ]
+}
