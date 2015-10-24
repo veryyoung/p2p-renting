@@ -2,7 +2,6 @@ package gg.sf.renting.model;
 
 import lombok.Data;
 
-import java.util.List;
 
 /**
  * Created by veryyoung on 2015/10/24.
@@ -16,6 +15,6 @@ public class Location {
 
     private String region;
 
-    private List<String> community;
+    private String community;
 
 }

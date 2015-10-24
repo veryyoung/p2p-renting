@@ -5,6 +5,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 
+import java.io.Serializable;
 import java.util.List;
 
 
@@ -36,8 +37,8 @@ public abstract class BaseDao<T> {
         return (T) getCurrentSession().get(entityClass, id);
     }
 
-    public void create(T t) {
-        getCurrentSession().save(t);
+    public String create(T t) {
+       return (String) getCurrentSession().save(t);
     }
 
     public void update(T t) {
