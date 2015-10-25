@@ -60,9 +60,9 @@ define(['module', 'common'],function(module, common){
             //分别进租客与房东的界面
             var userType = res.data.userType || '';
             if(userType=='RENTER')
-                jxhl.utility.loadJxhlLayout('renter/wait');
+                jxhl.utility.loadJxhlLayout('chat');
             else
-                jxhl.utility.loadJxhlLayout('landlord/wait');
+                jxhl.utility.loadJxhlLayout('chat');
         });
     }
 
