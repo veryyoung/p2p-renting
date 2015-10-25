@@ -2,8 +2,13 @@
 <jxhl xmlns="http://halo-studio.com/jxhl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://halo-studio.com/jxhl ../../js/jxhl.xsd">
     <html dock="fill" css_name="app-scroll">
         <div class="container">
+            <div local_var="div_result">
+                最佳租客查询中..
+            </div>
             <div class="form">
-               最佳租客查询中..
+                <button local_var="btn_refresh" type="button">
+                    换一批
+                </button>
             </div>
         </div>
     </html>
