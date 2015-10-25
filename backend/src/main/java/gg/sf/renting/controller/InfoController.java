@@ -36,6 +36,7 @@ public class InfoController {
     public RestData publish(RenterInfo renterInfo, @RequestHeader(value = "token", required = false) String token) {
         RestData restData = new RestData();
         if (tokenService.checkToken(token)) {
+            renterInfo.setUserId(TokenUtils.getAccountIdFromToken(token));
             String infoId = infoService.addRenterInfo(renterInfo);
             if (StringUtils.isNoneEmpty(infoId)) {
                 restData.setSuccess(1);
@@ -56,6 +57,7 @@ public class InfoController {
     public RestData publishLand(LandlordInfo landlordInfo, @RequestHeader(value = "token", required = false) String token) {
         RestData restData = new RestData();
         if (tokenService.checkToken(token)) {
+            landlordInfo.setUserId(TokenUtils.getAccountIdFromToken(token));
             String infoId = infoService.addLandInfo(landlordInfo);
             if (StringUtils.isNoneEmpty(infoId)) {
                 restData.setSuccess(1);

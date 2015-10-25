@@ -8,14 +8,9 @@ import gg.sf.renting.utils.MobileUtils;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
 
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,6 +26,11 @@ public class HomeController extends BaseController {
 
     @Autowired
     private TokenService tokenService;
+
+    @RequestMapping("")
+    public RestData index() {
+        return new RestData();
+    }
 
     @RequestMapping("/register")
     public RestData register(User user) {

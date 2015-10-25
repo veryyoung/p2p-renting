@@ -7,7 +7,7 @@
                     <h2>登录</h2>
                 </div>
                 <div class="form-group">
-                    <input local_var="txt_mobile" type="text" class="form-control" placeholder="手机"/>
+                    <input local_var="txt_mobile" type="text" class="form-control" placeholder="手机或用户名"/>
                 </div>
                 <div class="form-group">
                     <input local_var="txt_pwd" type="password" class="form-control" placeholder="密码"/>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jxhl xmlns="http://halo-studio.com/jxhl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://halo-studio.com/jxhl ../../js/jxhl.xsd">
+    <panel dock="top" height="70" template="../common/head.xml" template_args="header">
+        
+    </panel>
+    <html dock="fill" css_name="app-scroll">
+        <div class="container">
+            <div class="form">
+                <div class="form-group">
+                    <select local_var="txt_jointrent" class="form-control" placeholder="合租">
+                        <option value="1">合租</option>
+                        <option value="2">整租</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input local_var="txt_peoplenumber" type="number" class="form-control" placeholder="限住人数"/>
+                </div>
+                <div class="form-group">
+                    <select local_var="txt_sexlimit" class="form-control" placeholder="合租性别">
+                        <option value="ANY">性别不限</option>
+                        <option value="MALE">限男性</option>
+                        <option value="FEMALE">限女性</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input local_var="txt_acreage" type="text" class="form-control" placeholder="面积"/>
+                </div>
+                <div class="form-group">
+                    <select local_var="txt_roomcount" class="form-control" placeholder="卧室个数">
+                        <option value="1">1室</option>
+                        <option value="2">2室</option>
+                        <option value="3">3室</option>
+                        <option value="4">4室</option>
+                        <option value="5">5室</option>
+                        <option value="6">6室</option>
+                        <option value="7">7室</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input local_var="txt_price" type="text" class="form-control" placeholder="价格"/>
+                </div>
+                <div class="form-group">
+                    <input local_var="txt_doorNumber" type="text" class="form-control" placeholder="单元号"/>
+                </div>
+                <div class="form-group">
+                    <a local_var="txt_location">选取小区</a>
+                </div>
+                <div class="form-group">
+                    <input local_var="txt_traffic" type="text" class="form-control" placeholder="交通"/>
+                </div>
+                <div class="form-group">
+                    <input local_var="txt_arround" type="text" class="form-control" placeholder="周边"/>
+                </div>
+                <div class="form-group">
+                    <button local_var="btn_publish" type="button" class="btn btn-primary">确认发布</button>
+                </div>
+            </div>
+        </div>
+    </html>
+    <runnable>
+        <![CDATA[
+            var header = {'title':'发布房源','useBack':true,'backCall':function(){
+                jxhl.utility.loadJxhlLayout('landlord/wait');
+            }};
+            require(['pages/landlord-publish'], function(a){
+                a.init(jxhl$container, jxhl$arguments, jxhl$localVars);
+            });
+        ]]>
+    </runnable>
+</jxhl>

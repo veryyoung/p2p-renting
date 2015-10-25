@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/Users/xiovine/Documents/Vine.Products/sf-hackathon/p2p-renting/hybrid/p2p_renting/platforms/android/CordovaLib/assets"/></dataSet><dataSet config="debug"><source path="/Users/xiovine/Documents/Vine.Products/sf-hackathon/p2p-renting/hybrid/p2p_renting/platforms/android/CordovaLib/src/debug/assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/Users/gcg/Sites/p2p-renting/hybrid/p2p_renting/platforms/android/CordovaLib/assets"/></dataSet><dataSet config="debug"><source path="/Users/gcg/Sites/p2p-renting/hybrid/p2p_renting/platforms/android/CordovaLib/src/debug/assets"/></dataSet></merger>

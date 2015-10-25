@@ -8,9 +8,9 @@
         <div class="container">
             <div class="row">
                 <div style="margin:0px 10px;">
-                    <i local_var="i_return" local-id="page-head-left" class="pull-left fa fa-1x5 fa-reply" style="margin-top:18px; margin-right:5px; display:none;"> </i>
+                    <i local_var="i_return" local-id="page-head-left" class="pull-left fa fa-2x fa-reply" style="margin-top:15px; margin-right:5px; display:none;"> </i>
                     <span local_var="label_title"> </span>
-                    <i local_var="i_right" local-id="page-head-right" class="pull-right fa" style="display:none; margin-top:18px;"> </i>
+                    <i local_var="i_right" local-id="page-head-right" class="pull-right fa" style="display:none; margin-top:15px;"> </i>
                 </div>
             </div>
         </div>
@@ -23,7 +23,7 @@
         label_title.innerHTML = config.title||'';
         if(config.useBack) i_return.style.display = '';
         if(config.useMore) i_right.style.display = '';
-        if(config.moreCss) i_right.className = 'pull-right fa fa-1x5 ' + config.moreCss;
+        if(config.moreCss) i_right.className = 'pull-right fa fa-2x ' + config.moreCss;
         if(config.backCall){
             jxhl.utility.attachClickEvent(i_return, config.backCall);
         }

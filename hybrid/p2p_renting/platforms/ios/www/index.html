@@ -34,6 +34,7 @@
         FastClick.attach(document.body);
         
         jxhl.useCache = true;
+        jxhl.useHashHistory = true;
         jxhl.utility.monitorWindow();
         document.addEventListener('deviceready', onDeviceReady);
         function onDeviceReady(){

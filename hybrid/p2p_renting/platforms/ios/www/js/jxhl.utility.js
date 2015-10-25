@@ -11,7 +11,7 @@ jxhl.extension(function () {
         //this.baseUri = (window.location.protocol||"http:") + "//";
         //use uri route from root, so the baseUri is empty
         this.baseUri = "";
-        this.apiUri = "http://127.0.0.1:8080/";
+        this.apiUri = "http://192.168.22.47:8080/";
         this.isDeviceScrolling = false;
         this.topContainer = null;
         this.debugContainer = null;

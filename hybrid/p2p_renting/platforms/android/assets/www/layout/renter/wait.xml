@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jxhl xmlns="http://halo-studio.com/jxhl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://halo-studio.com/jxhl ../../js/jxhl.xsd">
+    <panel dock="top" height="70" template="../common/head.xml" template_args="header">
+        
+    </panel>
+    <html dock="fill" css_name="app-scroll">
+        <div class="container">
+            <div class="form">
+                <div class="form-group">
+                    <button local_var="btn_publish" type="button" class="btn btn-brightgreen">我要租房</button>
+                </div>
+                <div class="form-group">
+                    <button local_var="btn_suggest" type="button" class="btn btn-red">查看推荐</button>
+                </div>
+            </div>
+        </div>
+    </html>
+    <runnable>
+        <![CDATA[
+            var header = {'title':'我要租房','useBack':false,'backCall':function(){},
+            'useMore':true, 'moreCss':'fa-user', 'moreCall':function(){
+                jxhl.utility.loadJxhlLayout('landlord/wait');
+            }};
+            require(['pages/renter-wait'], function(a){
+                a.init(jxhl$container, jxhl$arguments, jxhl$localVars);
+            });
+        ]]>
+    </runnable>
+</jxhl>
