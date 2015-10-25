@@ -13,10 +13,13 @@ public interface InfoService {
 
     Info getLandInfo(String id);
 
+    LandlordInfo getLandInfoByUserId(String userId);
+
+    RenterInfo getRentInfoByUserId(String userId);
+
     Info getRentInfo(String id);
 
     String addRenterInfo(RenterInfo renterInfo);
-
 
 
 }
