@@ -25,6 +25,9 @@ define(['module', 'common'],function(module, common){
         this.jxhlLocalVars[0].onclick = function(){
             jxhl.utility.loadJxhlLayout('landlord/publish');
         }
+        this.jxhlLocalVars[1].onclick = function(){
+            jxhl.utility.loadJxhlLayout('landlord/suggest');
+        }
        
     }
 

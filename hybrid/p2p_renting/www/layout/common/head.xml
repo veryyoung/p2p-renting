@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jxhl xmlns="http://halo-studio.com/jxhl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://halo-studio.com/jxhl ../../js/jxhl.xsd">
+    
+    <panel dock="fill" border_width="0,0,1,0" css_name="ui-head text-center">
+    <panel dock="top" height="20"></panel>
+    
+    <html dock="fill">
+        <div class="container">
+            <div class="row">
+                <div style="margin:0px 10px;">
+                    <i local_var="i_return" local-id="page-head-left" class="pull-left fa fa-1x5 fa-reply" style="margin-top:18px; margin-right:5px; display:none;"> </i>
+                    <span local_var="label_title"> </span>
+                    <i local_var="i_right" local-id="page-head-right" class="pull-right fa" style="display:none; margin-top:18px;"> </i>
+                </div>
+            </div>
+        </div>
+    </html>
+    </panel>
+    <runnable>
+        <![CDATA[
+        var config = jxhl$arguments;
+        if(!config) return;
+        label_title.innerHTML = config.title||'';
+        if(config.useBack) i_return.style.display = '';
+        if(config.useMore) i_right.style.display = '';
+        if(config.moreCss) i_right.className = 'pull-right fa fa-1x5 ' + config.moreCss;
+        if(config.backCall){
+            jxhl.utility.attachClickEvent(i_return, config.backCall);
+        }
+        if(config.moreCall){
+            jxhl.utility.attachClickEvent(i_right, config.moreCall);
+        }
+        ]]>
+    </runnable>
+</jxhl>

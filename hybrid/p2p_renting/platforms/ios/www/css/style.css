@@ -442,6 +442,13 @@ img.bordered5 {
     .ui-head span {
         font-size:1.25em;
     }
+ .ui-head{
+    background:#eee;
+    border-bottom:#cdcdcd 1px solid;
+ }
+ .ui-head .row{
+     line-height:50px;
+ }
 
 .ui-footer-container {
     z-index:99;

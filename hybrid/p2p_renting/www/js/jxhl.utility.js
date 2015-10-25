@@ -11,7 +11,7 @@ jxhl.extension(function () {
         //this.baseUri = (window.location.protocol||"http:") + "//";
         //use uri route from root, so the baseUri is empty
         this.baseUri = "";
-        this.apiUri = "http://192.168.22.56:8080/";
+        this.apiUri = "http://127.0.0.1:8080/";
         this.isDeviceScrolling = false;
         this.topContainer = null;
         this.debugContainer = null;
@@ -80,8 +80,8 @@ jxhl.extension(function () {
         var self = this;
         url = this.apiUri + url;
         headers = headers||{};
-        if(window._xddApp && window._xddApp['token'] && window._xddApp['token'].token){
-            headers.token = window._xddApp['token'].token;
+        if(window.Renting_AccessToken){
+            headers.token = window.Renting_AccessToken;
         }
         if(typeof(jQuery)!="undefined"){
             console.log("Using jQuery XHR..");

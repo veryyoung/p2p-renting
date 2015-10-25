@@ -73,7 +73,7 @@ define(['module', 'common'],function(module, common){
             sexLimit:sexLimit, acreage:acreage, 
             minPrice:minPrice, maxPrice:maxPrice, 
             areaRange:areaRange, community: "上地家园", 
-            x:116.321306, y:40.041165};
+            longitude:116.321306, latitude:40.041165};
             
         jxhl.utility.postJSON('info/publish/renter', null, 
             data, function(res){

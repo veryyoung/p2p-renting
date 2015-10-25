@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <jxhl xmlns="http://halo-studio.com/jxhl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://halo-studio.com/jxhl ../../js/jxhl.xsd">
+    <panel dock="top" height="70" template="../common/head.xml" template_args="header">
+        
+    </panel>
     <html dock="fill" css_name="app-scroll">
         <div class="container">
             <div class="form">
@@ -42,6 +45,9 @@
     </html>
     <runnable>
         <![CDATA[
+            var header = {'title':'发布租房信息','useBack':true,'backCall':function(){
+                jxhl.utility.loadJxhlLayout('renter/wait');
+            }};
             require(['pages/renter-publish'], function(a){
                 a.init(jxhl$container, jxhl$arguments, jxhl$localVars);
             });

@@ -88,7 +88,7 @@ define(['module', 'common'],function(module, common){
             roomCount:roomCount, price:price, 
             doorNumber:doorNumber, traffic:traffic,
             arround:arround, community: "上地家园",
-             x:116.321306, y:40.041165};
+            longitude:116.321306, latitude:40.041165};
         //TODO: image base64
             
         jxhl.utility.postJSON('info/publish/landlord', null, 
