@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <jxhl xmlns="http://halo-studio.com/jxhl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://halo-studio.com/jxhl ../js/jxhl.xsd">
+    <panel dock="top" height="70" template="common/head.xml" template_args="header">
+        
+    </panel>
+    <panel dock="bottom" height="40" css_text="background:#efefef;">
+        <html dock="left" width="0.75*" css_text="padding:0px 5px 0px 8px;">
+            <input local_var="txt_key" class="form-control" placeholder="请输入消息.."/>
+        </html>
+        <html dock="fill" css_text="padding:0px 3px;">
+            <button local_var="btn_sendmsg" type="button" class="btn btn-brightgreen">发送</button>
+        </html>
+    </panel>
     <html dock="fill" css_name="app-scroll">
         <div class="container">
-            <div class="form">
-                <div class="form-group">
-                    <h2>聊天</h2>
-                </div>
-                <div class="form-group" dock="top" width="100%">
-                    <button local_var="btn_chatback" type="button" class="btn btn-primary" dock="left">返回</button>
-                    <div type="text" dock="center">聊天</div>
-                    <div type="text" dock="right" local_var="txt_chatstatus">状态</div>
-                </div>
-                <div class="form-group">
-                    <list class="list-group" local_var="list_chatmsg" dock="center"></list>
-                </div>
-                <div class="form-group">
-                    <input local_var="txt_msg" type="text" class="form-control" placeholder="输入聊天内容"/>
-                    <button local_var="btn_sendmsg" type="button" class="btn btn-brightgreen">发送</button>
-                </div>
-                <div class="form-group text-center" local-id="div-msg"></div>
+            <div local_var="div_status">聊天状态..</div>
+            <div local_var="div_result">
+               
             </div>
         </div>
     </html>
     <runnable>
         <![CDATA[
+            var header = {'title':'高效沟通中..','useBack':true,'backCall':function(){
+                jxhl.historyBack();   
+            }};
             require(['pages/chat'], function(a){
                 a.init(jxhl$container, jxhl$arguments, jxhl$localVars);
             });

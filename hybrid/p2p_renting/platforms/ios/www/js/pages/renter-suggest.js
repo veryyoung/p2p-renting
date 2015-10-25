@@ -34,7 +34,7 @@ define(['module', 'common'],function(module, common){
         self.jxhlLocalVars[0].innerHTML = '最佳房东查询中..';
         $(self.jxhlLocalVars[0]).prop('disabled', true);
         
-        jxhl.utility.getJSON('info/refer/renter', null,
+        jxhl.utility.getJSON('info/refer/landlord', null,
         null, function(res){
             if(!res.success){
                 jxhl.utility.alert(res.comment);

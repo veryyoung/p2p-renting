@@ -20,6 +20,8 @@ define(['module', 'common'],function(module, common){
         
         //注入需要登录
         common.RequireLogin();
+        
+        //jxhl.utility.loadJxhlLayout('chat', ['renter', 1]);
     }
 
     module.exports = new Func();
