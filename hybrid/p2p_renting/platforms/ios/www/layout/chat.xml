@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jxhl xmlns="http://halo-studio.com/jxhl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://halo-studio.com/jxhl ../js/jxhl.xsd">
+    <html dock="fill" css_name="app-scroll">
+        <div class="container">
+            <div class="form">
+                <div class="form-group">
+                    <h2>聊天</h2>
+                </div>
+                <div class="form-group" dock="top" width="100%">
+                    <button local_var="btn_chatback" type="button" class="btn btn-primary" dock="left">返回</button>
+                    <div type="text" dock="center">聊天</div>
+                    <div type="text" dock="right" local_var="txt_chatstatus">状态</div>
+                </div>
+                <div class="form-group">
+                    <list class="list-group" local_var="list_chatmsg" dock="center"></list>
+                </div>
+                <div class="form-group">
+                    <input local_var="txt_msg" type="text" class="form-control" placeholder="输入聊天内容"/>
+                    <button local_var="btn_sendmsg" type="button" class="btn btn-brightgreen">发送</button>
+                </div>
+                <div class="form-group text-center" local-id="div-msg"></div>
+            </div>
+        </div>
+    </html>
+    <runnable>
+        <![CDATA[
+            require(['pages/chat'], function(a){
+                a.init(jxhl$container, jxhl$arguments, jxhl$localVars);
+            });
+        ]]>
+    </runnable>
+</jxhl>

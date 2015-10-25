@@ -50,6 +50,16 @@ public class InfoServiceImpl extends BaseService implements InfoService {
     }
 
     @Override
+    public LandlordInfo getLandInfoByUserId(String userId) {
+        return landInfoDao.findByUserId(userId);
+    }
+
+    @Override
+    public RenterInfo getRentInfoByUserId(String userId) {
+        return renterInfoDao.findByUserId(userId);
+    }
+
+    @Override
     public Info getRentInfo(String id) {
         return renterInfoDao.find(id);
     }

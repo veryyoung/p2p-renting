@@ -21,9 +21,11 @@ public class LandlordInfo extends Info {
     @Column(length = 32)
     private String id;
 
-    private String doorNumber;
-
     private double price;
+
+    private int roomNumber;
+
+    private double area;
 
     @Transient
     private List<Image> images;
