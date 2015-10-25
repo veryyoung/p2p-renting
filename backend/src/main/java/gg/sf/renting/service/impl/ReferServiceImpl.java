@@ -26,11 +26,11 @@ public class ReferServiceImpl extends BaseService implements ReferService {
 
     @Override
     public List<LandlordInfo> referToLand(LandlordInfo landlordInfo) {
-        return null;
+        return landInfoDao.findAll();
     }
 
     @Override
     public List<RenterInfo> referToRenter(RenterInfo renterInfo) {
-        return null;
+        return renterInfoDao.findAll();
     }
 }
