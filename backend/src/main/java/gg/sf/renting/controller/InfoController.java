@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by veryyoung on 2015/10/24.
  */
@@ -37,6 +40,9 @@ public class InfoController {
             if (StringUtils.isNoneEmpty(infoId)) {
                 restData.setSuccess(1);
                 restData.setComment("信息发布成功");
+                Map<String, Object> data = new HashMap<>();
+                data.put("id", infoId);
+                restData.setData(data);
             } else {
                 restData.setComment("发布失败，请校验数据格式");
             }
@@ -54,6 +60,9 @@ public class InfoController {
             if (StringUtils.isNoneEmpty(infoId)) {
                 restData.setSuccess(1);
                 restData.setComment("信息发布成功");
+                Map<String, Object> data = new HashMap<>();
+                data.put("id", infoId);
+                restData.setData(data);
             } else {
                 restData.setComment("发布失败，请校验数据格式");
             }
